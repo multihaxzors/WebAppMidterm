@@ -1,3 +1,9 @@
+/*
+    File Name: books.js
+    Student Name: Jonathan Champ
+    Student ID: 301230592
+    Date: 2022-10-28
+*/
 // define the book model
 import booksModel from '../models/books.js';
 

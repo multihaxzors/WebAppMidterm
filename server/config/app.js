@@ -1,3 +1,9 @@
+/*
+    File Name: app.js
+    Student Name: Jonathan Champ
+    Student ID: 301230592
+    Date: 2022-10-28
+*/
 import createError from 'http-errors';
 import express from 'express';
 
