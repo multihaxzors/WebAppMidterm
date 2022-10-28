@@ -22,11 +22,11 @@ export function displayAddPage(req, res, next) {
 export function processAddPage(req, res, next) {
 
     let newBook = booksModel({
-        name: req.body.name,
-        author: req.body.author,
-        published: req.body.published,
-        description: req.body.description,
-        price: req.body.price
+        "name": req.body.name,
+        "author": req.body.author,
+        "published": req.body.published,
+        "description": req.body.description,
+        "price": req.body.price
     });
 
     booksModel.create(newBook, (err, Book) => {
@@ -56,17 +56,17 @@ export function displayEditPage(req, res, next) {
 // POST - process the information passed from the details form and update the document
 export function processEditPage(req, res, next) {
     let id = req.params.id;
-    
-    let newBook = booksModel({
-        _id: req.body.id,
-        name: req.body.name,
-        author: req.body.author,
-        published: req.body.published,
-        description: req.body.description,
-        price: req.body.price
+
+    let newBook = new booksModel({
+        "_id": id,
+        "name": req.body.name,
+        "author": req.body.author,
+        "published": req.body.published,
+        "description": req.body.description,
+        "price": req.body.price
     });
 
-    booksModel.updateOne({_id: id }, newBook, (err, Book) => {
+    booksModel.updateOne({_id: id }, newBook, {}, (err) => {
         if(err){
             console.error(err);
             res.end(err);
